@@ -83,25 +83,25 @@ return [
 //            'driver' => 'eloquent',
 //            'model' => App\Models\User::class,
 //        ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admins::class,
-        ],
+//        'admins' => [
+//            'driver' => 'eloquent',
+//            'model' => App\Models\Admins::class,
+//        ],
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Users::class, // 这应该是你的用户模型的类名
+            'model' => App\Models\members::class, // 这应该是你的用户模型的类名
         ],
 
 
-        'administratorss' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\WdwAdminRegisterModel::class,
-        ],
-
-        'studentss' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\students::class,
-        ],
+//        'administratorss' => [
+//            'driver' => 'eloquent',
+//            'model' => App\Models\WdwAdminRegisterModel::class,
+//        ],
+//
+//        'studentss' => [
+//            'driver' => 'eloquent',
+//            'model' => App\Models\students::class,
+//        ],
 
         // 'users' => [
         //     'driver' => 'database',

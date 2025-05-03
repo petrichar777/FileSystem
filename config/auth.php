@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'students',
+        'passwords' => 'students',
     ],
 
     /*
@@ -49,10 +49,13 @@ return [
             'provider' => 'users',
 
         ],
-        'student' => [
+        'students' => [
             'driver' => 'jwt',
-            'provider' => 'student',
-            'hash' => false,
+            'provider' => 'students',
+        ],
+        'teachers' => [
+            'driver' => 'jwt',
+            'provider' => 'teachers',
         ],
         'administrator' => [
             'driver' => 'jwt',  // 使用 JWT 驱动
@@ -79,18 +82,15 @@ return [
     */
 
     'providers' => [
-//        'users' => [
-//            'driver' => 'eloquent',
-//            'model' => App\Models\User::class,
-//        ],
-//        'admins' => [
-//            'driver' => 'eloquent',
-//            'model' => App\Models\Admins::class,
-//        ],
-        'users' => [
+        'teachers' => [
             'driver' => 'eloquent',
-            'model' => App\Models\members::class, // 这应该是你的用户模型的类名
+            'model' => App\Models\teachers::class, // 这个类必须实际存在
         ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\students::class,
+        ],
+
 
 
 //        'administratorss' => [

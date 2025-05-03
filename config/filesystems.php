@@ -52,6 +52,17 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
+        'oss' => [
+            'driver'        => 'oss',
+            'access_id'     => env('OSS_ACCESS_KEY_ID'),
+            'access_key'    => env('OSS_ACCESS_KEY_SECRET'),
+            'bucket'        => env('OSS_BUCKET'),
+            'endpoint'      => env('OSS_ENDPOINT'), // 外网访问：xxx.aliyuncs.com
+            'cdnDomain'     => env('OSS_CDN_DOMAIN', ''), // CDN 或自定义域名可用
+            'ssl'           => false,
+            'isCName'       => false,
+            'debug'         => false,
+        ],
 
     ],
 

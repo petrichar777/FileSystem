@@ -38,12 +38,11 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\Session\Middleware\AuthenticateSession::class,
         ],
 
         'api' => [
             \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\Session\Middleware\AuthenticateSession::class,
+//            \Illuminate\Session\Middleware\AuthenticateSession::class,
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -70,5 +69,6 @@ class Kernel extends HttpKernel
         'jwt.role' => \App\Http\Middleware\JWTRoleAuth::class,
         'jwt.role1' => \App\Http\Middleware\JwtAuth::class,
         'cors' => \App\Http\Middleware\EnableCrossRequestMiddleware::class,
+        'jwt.guard' => \App\Http\Middleware\JwtMultiGuardMiddleware::class,
     ];
 }
